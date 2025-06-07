@@ -11,9 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MatixLab/utils"
+    "url": "https://github.com/MatixLab/utils.git"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "exports": {

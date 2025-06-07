@@ -1,4 +1,4 @@
-# @primoui/utils
+# @antzhu/utils
 
 To install dependencies:
 
