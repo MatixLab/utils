@@ -9,7 +9,6 @@ import {
   isTruthy,
   joinAsSentence,
   range,
-  slugify,
   splitArrayChunks,
   stripHtml,
 } from './helpers'
@@ -62,24 +61,6 @@ describe('getExcerpt', () => {
       'Lorem ipsum dolor si...',
     )
     expect(getExcerpt('', 10)).toEqual(null)
-  })
-})
-
-describe('slugify', () => {
-  it('should slugify the input string', () => {
-    expect(slugify('HelloWorld')).toEqual('helloworld')
-    expect(slugify('Hello World')).toEqual('hello-world')
-    expect(slugify('HelloWorld', true)).toEqual('hello-world')
-    expect(slugify('Lorem Ipsum Dolor Sit Amet')).toEqual('lorem-ipsum-dolor-sit-amet')
-    expect(slugify('1234')).toEqual('1234')
-    expect(slugify('')).toEqual('')
-  })
-
-  it('should slugify the input string with custom replacements', () => {
-    expect(slugify('Hello+World')).toEqual('helloplusworld')
-    expect(slugify('Hello#World')).toEqual('hellosharpworld')
-    expect(slugify('Hello+World', true)).toEqual('helloplus-world')
-    expect(slugify('Hello#World', true)).toEqual('hellosharp-world')
   })
 })
 

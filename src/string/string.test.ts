@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { lcFirst, ucFirst } from './string'
+import { lcFirst, ucFirst,capitalize } from './string'
 
 describe('ucFirst', () => {
   test('should uppercase the first character of a string', () => {
@@ -52,5 +52,22 @@ describe('lcFirst', () => {
   test('should preserve the rest of the string', () => {
     expect(lcFirst('Hello World')).toBe('hello World')
     expect(lcFirst('hello')).toBe('hello')
+  })
+})
+
+
+describe('capitalize', () => {
+  test('should handle non-string inputs', () => {
+    expect(ucFirst(null as any)).toBe('')
+    expect(ucFirst(undefined as any)).toBe('')
+    expect(ucFirst(123 as any)).toBe('')
+  })
+
+  test('first letter uppercase, other lowercase', () => {
+    expect(capitalize('hello World')).toBe('Hello world')
+    expect(capitalize('123')).toBe('123')
+    expect(capitalize('中国')).toBe('中国')
+    expect(capitalize('āÁĂÀ')).toBe('Āáăà')
+    expect(capitalize('\a')).toBe('A')
   })
 })

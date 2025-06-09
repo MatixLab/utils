@@ -1,6 +1,5 @@
 export * from './colors/colors'
 export * from './dom/dom'
-export * from './events/events'
 export * from './format/format'
 export * from './helpers/helpers'
 export * from './http/http'

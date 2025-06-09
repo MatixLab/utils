@@ -1,4 +1,3 @@
-import slugifyString from '@sindresorhus/slugify'
 
 /**
  * A collection of helper functions used throughout the application.
@@ -73,22 +72,7 @@ export const getExcerpt = (content: string | undefined | null, length = 250) => 
   return text
 }
 
-/**
- * Converts a string into a slugified version.
- *
- * @param input The string to be slugified.
- * @param decamelize Whether to decamelize the string. Defaults to false.
- * @returns The slugified string.
- */
-export const slugify = (input: string, decamelize = false): string => {
-  return slugifyString(input, {
-    decamelize,
-    customReplacements: [
-      ['#', 'sharp'],
-      ['+', 'plus'],
-    ],
-  })
-}
+
 
 /**
  * Check if a given string is a valid cuid
